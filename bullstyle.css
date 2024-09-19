@@ -55,10 +55,20 @@ td {
 
 /* th에는 상단과 하단 모두 border가 필요할 수 있으므로 아래처럼 추가 */
 th {
-    background-color: rgb(123, 153, 71);
-    color: white;
+    background-color: white;
     border-bottom: 2px solid #000; /* 테이블 헤더 하단에 선 추가 */
 }
 tr {
     border-bottom: 1px solid #ccc; /* 각 행의 하단에 선 추가 */
+}
+.add-btn{
+    margin-bottom: 5px;
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
 }
