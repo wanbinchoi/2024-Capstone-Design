@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body class="login-body">
+    <header>
+        <a href="home.html" class="head-container">
+            <h1 class="heading">취하다</h1>
+        </a>
+    </header>
+    <div class="login-container">
+        <div class="login-form">
+            <form action="">
+                <h1>Login</h1>
+                <div class="input-form">
+                    <input type="text" id="region-input" class="region-input" placeholder="지역을 선택하세요" autocomplete="off">
+                    <div id="region-box" class="region-box">
+                        <div class="region-container" id="region-container">
+                            <span id="close" class="close">&times;</span>
+                            <ul id="city-list" class="city-list"></ul>
+                            <ul id="region-list" class="region-list"></ul>
+                        </div>    
+                    </div>        
+                    <input type="text" id="userid" class="userid" placeholder="ID">
+                    <input type="password" id="userpw" class="userpw" placeholder="password">
+                    
+                    <button type="button" class="login">로그인</button>
+                    <button type="button" class="join"><a href="join.html">회원가입</a></button>
+                </div>    
+            </form>
+        </div>
+    </div>
+    <footer>
+        <p>(자)취하다</p>
+        <a href="login.html" class="login-btn">로그인</a>
+    </footer>
+    <script src="login.js"></script>
+</body>
+</html>

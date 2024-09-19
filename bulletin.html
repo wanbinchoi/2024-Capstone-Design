@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시판</title>
+    <link rel="stylesheet" href="bullstyle.css">
+</head>
+<body>
+    <header>
+        <a href="home.html" class="head-container">
+            <h1 class="heading">취하다</h1>
+        </a>
+    </header>
+    <!-- 게시글 추가 버튼 -->
+     <div>
+        <a href="post.html">새 게시물 추가</a>
+            <!-- 게시판 테이블 -->
+        <table id="board">
+            <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>제목</th>
+                    <th>작성자</th>
+                    <th>날짜</th>
+                </tr>
+            </thead>
+            <tbody id="board-body">        
+            </tbody>
+        </table>
+    </div>    
+    <footer>
+        <p>(자)취하다</p>
+        <a href="login.html" class="login-btn">로그인</a>
+    </footer>
+
+    <script>
+        // 게시글 추가 버튼 클릭 이벤트
+        document.querySelector('.add-btn').addEventListener('click', function() {
+            const boardBody = document.getElementById('board-body');
+
+            // 새로운 게시물 데이터 생성
+            const newRow = document.createElement('tr');
+            const newPostNumber = boardBody.rows.length + 1;  // 새로운 번호
+
+            // 새 게시물의 각 열을 추가
+            newRow.innerHTML = `
+                <td>${newPostNumber}</td>
+                <td><a href="#">새 게시글</a></td>
+                <td>새 작성자</td>
+                <td>${new Date().toISOString().split('T')[0]}</td>
+            `;
+
+            // 새로운 게시글을 첫 번째에 삽입
+            boardBody.insertBefore(newRow, boardBody.firstChild);
+
+            // 번호 재정렬 (모든 게시물의 번호를 갱신)
+            Array.from(boardBody.rows).forEach((row, index) => {
+                row.cells[0].innerText = index + 1;
+            });
+        });
+    </script>
+</body>
+</html>

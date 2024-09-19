@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시판</title>
+    <link rel="stylesheet" href="post.css">
+
+</head>
+<body>
+    <header>
+        <a href="home.html" class="head-container">
+            <h1 class="heading">취하다</h1>
+        </a>
+    </header>
+    <div class="container">
+        <div class="form-container">
+            <input type="text" id="title" placeholder="제목" />
+            <textarea id="content" placeholder="내용" rows="4"></textarea>
+            <button onclick="addPost()">글 작성</button>
+        </div>
+        <ul class="post-list" id="postList"></ul>
+    </div>
+    <footer>
+        <p>(자)취하다</p>
+    </footer>
+    <script src="post.js"></script>
+</body>
+</html>

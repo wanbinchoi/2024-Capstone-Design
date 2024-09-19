@@ -1,0 +1,90 @@
+/* cdn import */
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap');
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+.heading {
+    font-size: 50px;
+    padding: 20px;
+    background-color: #4CAF50;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-family: 'Dongle', sans-serif;
+}
+
+.head-container{
+    text-decoration: none;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-gap: 100px; 
+    justify-items: center;
+    margin-bottom: 50px;
+}
+
+.image-grid a {
+    position: relative;
+    text-align: center; 
+    text-decoration: none;
+    color: #333; 
+}
+
+.image-grid img {
+    width: 250px; 
+    height: 250px;
+    object-fit: cover; 
+    border-radius: 25%; 
+    transition: filter 0.3s ease, transform 0.3s ease; 
+}
+
+.image-grid p {
+    position: absolute; 
+    bottom: 10px; 
+    left: 0;
+    right: 0;
+    margin: 0;
+    color: rgb(242, 192, 192);
+    font-size: 30px; 
+    font-weight: bold;
+    opacity: 0; /* 기본적으로 텍스트 숨김 */
+    transition: opacity 0.3s ease; /* 서서히 나타나도록 설정 */
+    background-color: rgba(43, 12, 25, 0.6); 
+    padding: 10px;
+    border-radius: 0 0 40% 40%; 
+}
+
+.image-grid img:hover {
+    filter: blur(2px); 
+    transform: scale(1.1); 
+}
+
+.image-grid a:hover p {
+    opacity: 1; 
+}
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+.login-btn{
+    text-decoration: none;
+    color: white;
+    padding: 0 20px;
+}

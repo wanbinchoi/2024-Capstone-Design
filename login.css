@@ -1,0 +1,137 @@
+/* cdn import */ 
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap');
+
+body {
+    font-family: Arial, sans-serif;
+    height: 100vh; /* 화면 전체 높이 */
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.heading {
+    font-size: 50px;
+    padding: 20px;
+    background-color: #4CAF50;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-family: 'Dongle', sans-serif;
+}
+
+.head-container{
+    text-decoration: none;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.login-btn {
+    text-decoration: none;
+    color: white;
+    padding: 0 20px;
+}
+
+.region-box {
+    display: none;
+    position: fixed; /* 화면에 고정시키기 위해 */
+    top: 50%; /* 화면의 중간 위치 */
+    left: 50%; /* 화면의 중간 위치 */
+    transform: translate(-50%, -50%); /* 중앙 정렬 */
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    background-color: white;
+}
+
+.region-container {
+    max-height: 300px; /* 제한된 높이 설정 */
+    overflow-y: auto; /* 스크롤 추가 */
+}
+
+.region-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.region-container li {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+}
+
+.region-container li:hover {
+    background-color: #f0f0f0;
+}
+
+.region-container .close {
+    display: block;
+    text-align: right;
+    font-size: 20px;
+    cursor: pointer;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form {
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.2);
+    padding: 50px;
+    position: relative;
+    width: 400px; /* 적절한 너비 설정 */
+    background-color: white;
+}
+
+.input-form input {
+    height: 40px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.input-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login, .join {
+    margin-bottom: 5px;
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.join a {
+    color: white;
+    text-decoration: none;
+}
