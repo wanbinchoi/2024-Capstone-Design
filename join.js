@@ -16,8 +16,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
         const userid = document.getElementById('userid').value.trim();
         const userpw = document.getElementById('userpw').value.trim();
         const userpwconfirm = document.getElementById('userpw-confirm').value.trim();
-        const phonenumber = document.querySelector('input[placeholder="전화번호를 입력하세요."]').value.trim();
-        const address = document.querySelector('input[placeholder="주소를 입력하세요."]').value.trim();
+        const phonenumber = document.getElementById('userphone').value.trim();
+        const address = document.getElementById('useradress').value.trim();
         
         hideAlert(); // 이전 알림 박스 숨기기
 

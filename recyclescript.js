@@ -28,14 +28,14 @@ const recyclingInfo = {
 };
 
 // 증상 클릭 시 정보 박스를 보여주는 함수
-function showMedicineList(type) {
-    const medicineBox = document.getElementById("medicine-box");
-    const medicineList = document.getElementById("medicine-list");
+function showRecycleList(type) {
+    const recycleBox = document.getElementById("recycle-box");
+    const recycleList = document.getElementById("recycle-list");
     const methodInfo = document.createElement('p');
     const cautionInfo = document.createElement('p');
 
     // 기존 리스트 초기화
-    medicineList.textContent = '';
+    recycleList.textContent = '';
     methodInfo.textContent = '';
     cautionInfo.textContent = '';
 
@@ -43,7 +43,7 @@ function showMedicineList(type) {
     recyclingInfo[type].items.forEach(item => {
         const li = document.createElement('li');
         li.textContent = item;
-        medicineList.appendChild(li);
+        recycleList.appendChild(li);
     });
 
     // 분리수거 방법 및 주의사항 추가
@@ -52,14 +52,14 @@ function showMedicineList(type) {
     methodInfo.classList.add('method-info');
     cautionInfo.classList.add('caution-info');
 
-    medicineList.appendChild(methodInfo);
-    medicineList.appendChild(cautionInfo);
+    recycleList.appendChild(methodInfo);
+    recycleList.appendChild(cautionInfo);
 
     // 약 상자 표시
-    medicineBox.style.display = 'block';
+    recycleBox.style.display = 'block';
 }
 
 // 상자 닫기 버튼 이벤트 리스너
 document.getElementById("close").addEventListener("click", function() {
-    document.getElementById("medicine-box").style.display = 'none';
+    document.getElementById("recycle-box").style.display = 'none';
 });

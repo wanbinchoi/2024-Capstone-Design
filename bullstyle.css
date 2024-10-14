@@ -7,19 +7,74 @@ body {
     margin: 0;
     padding: 0;
 }
-
+.head-container{
+    text-decoration: none;
+    margin: 0;
+    padding-top: 0;
+}
 .heading {
-    font-size: 50px;
-    padding: 20px;
-    margin-top: 0px;
+    font-size: 30px;
+    padding: 2px;
     background-color: #4CAF50;
     text-align: center;
     color: white;
     font-weight: bold;
     font-family: 'Dongle', sans-serif;
+    position: relative; /* relative로 설정하여 자식 요소를 조정 가능하게 */
 }
 
-.head-container{
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.8); /* 약간의 투명 배경 */
+    padding: 5px;
+    position: absolute;
+    bottom: 0; /* 제목 영역의 하단에 겹치도록 */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+
+}
+
+.navbar a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    border-radius: 5px;
+}
+.post-list{
+    margin-top: 20px;
+}
+.post-list th,
+td {
+    padding: 10px;
+    text-align: center;
+}
+
+/* th에는 상단과 하단 모두 border가 필요할 수 있으므로 아래처럼 추가 */
+.post-list th {
+    background-color: white;
+    border-bottom: 2px solid #000; /* 테이블 헤더 하단에 선 추가 */
+}
+.post-list tr {
+    border-bottom: 1px solid #ccc; /* 각 행의 하단에 선 추가 */
+}
+.post-list .add-btn{
+    margin-bottom: 5px;
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
     text-decoration: none;
 }
 footer{
@@ -41,34 +96,8 @@ footer{
     padding: 0 20px;
 }
 
-table {
+.post-list table {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
-}
-
-th,
-td {
-    padding: 10px;
-    text-align: center;
-}
-
-/* th에는 상단과 하단 모두 border가 필요할 수 있으므로 아래처럼 추가 */
-th {
-    background-color: white;
-    border-bottom: 2px solid #000; /* 테이블 헤더 하단에 선 추가 */
-}
-tr {
-    border-bottom: 1px solid #ccc; /* 각 행의 하단에 선 추가 */
-}
-.add-btn{
-    margin-bottom: 5px;
-    width: 100%;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    text-decoration: none;
 }

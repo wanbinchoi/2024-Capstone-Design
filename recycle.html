@@ -7,37 +7,45 @@
     <link rel="stylesheet" href="recycle.css">
 </head>
 <body>
-    <header>
-        <a href="home.html" class="head-container">
-            <h1 class="heading">취하다</h1>
+    <header class="heading">
+        <a href="recycle.html" class="head-container">
+            <h1>재활용</h1>
         </a>
+        <nav class="navbar">
+            <a href="home.html">Home</a>
+            <a href="recycle.html">재활용</a>
+            <a href="medicine.html">의약품</a>
+            <a href="household.html">자취용품</a>
+            <a href="furniture.html">가구</a>
+            <a href="recipes.html">레시피</a>
+            <a href="bulletin.html">게시판</a>
+        </nav>
     </header>
+    <section>
         <div class="search-bar">
             <input type="text" placeholder="재활용 검색">
             <button>검색</button>    
         </div>
 
-        <div class="medicine-list">
-            <div class="upper-row">
-                <button type="button" class="symptom" onclick="showMedicineList('종이류')"><h2>종이류</h2></button>
-                <button type="button" class="symptom" onclick="showMedicineList('플라스틱류')"><h2>플라스틱류</h2></button>
-                <button type="button" class="symptom" onclick="showMedicineList('유리류')"><h2>유리류</h2></button>
+        <div class="recycle-list">
+            <div class="recycle-container">
+                <button type="button" class="recycle" onclick="showRecycleList('종이류')"><h2>종이류</h2></button>
+                <button type="button" class="recycle" onclick="showRecycleList('플라스틱류')"><h2>플라스틱류</h2></button>
+                <button type="button" class="recycle" onclick="showMedicineList('유리류')"><h2>유리류</h2></button>
             </div>
-        
-            <div class="lower-row">
-                
-                <button type="button" class="symptom" onclick="showMedicineList('금속류')"><h2>금속류</h2></button>
-                <button type="button" class="symptom" onclick="showMedicineList('기타류')"><h2>기타류</h2></button>
+            <div class="recycle-container">
+                <button type="button" class="recycle" onclick="showRecycleList('금속류')"><h2>금속류</h2></button>
+                <button type="button" class="recycle" onclick="showRecycleList('기타류')"><h2>기타류</h2></button>
             </div>
         </div>
         
         
-        <div id="medicine-box" class="medicine-box">
+        <div id="recycle-box" class="recycle-box">
             <h3>분리수거 종류</h3>
-            <ul id="medicine-list"></ul>
+            <ul id="recycle-list"></ul>
             <span id="close" class="close">&times;</span>
         </div>
-        
+    
         <footer>
             <p>(자)취하다</p>
             <a href="login.html" class="login-btn">로그인</a>

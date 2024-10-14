@@ -1,4 +1,4 @@
-/* 구글 폰트 CDN import */
+/* cdn import */
 @import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap');
 
 body {
@@ -7,98 +7,98 @@ body {
     margin: 0;
     padding: 0;
 }
-
-/* 헤더 스타일 */
+.head-container{
+    text-decoration: none;
+    margin: 0;
+    padding-top: 0;
+}
 .heading {
-    font-size: 50px;
-    padding: 20px;
-    margin-top: 0px;
+    font-size: 30px;
+    padding: 2px;
     background-color: #4CAF50;
     text-align: center;
     color: white;
     font-weight: bold;
     font-family: 'Dongle', sans-serif;
+    position: relative; /* relative로 설정하여 자식 요소를 조정 가능하게 */
 }
 
-.head-container {
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.8); /* 약간의 투명 배경 */
+    padding: 5px;
+    position: absolute;
+    bottom: 0; /* 제목 영역의 하단에 겹치도록 */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+}
+
+.navbar a {
+    margin: 0 15px;
     text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
 }
 
-/* 검색 바 스타일 */
-.search-bar {
-    margin-bottom: 20px;
+.navbar a:hover {
+    background-color: #ddd;
+    border-radius: 5px;
+}
+.search-bar{
+    margin: 20px;
     text-align: center;
 }
-
-.search-bar input[type="text"] {
+.search-bar input[type="text"]{
     padding: 10px;
     width: 30%;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-
-.search-bar button {
+.search-bar button{
     padding: 10px;
     background-color: #4CAF50;
     color: white;
     border: none;
     border-radius: 4px;
 }
-
-/* 전체 버튼 리스트 스타일 */
-.medicine-list {
+.recycle-list{
     display: flex;
-    flex-direction: column; /* 수직 정렬 */
-    align-items: center; /* 내부 요소들 수평 중앙 정렬 */
-    row-gap: 30px; /* 윗 열과 아랫 열 간격 설정 */
-    margin-top: 50px; /* 상단 여백 추가 */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
-
-/* 윗 열 스타일 */
-.upper-row {
-    display: flex;
-    justify-content: center; /* 윗 열의 버튼들을 중앙 정렬 */
-    gap: 100px; /* 버튼 간의 간격 설정 */
-}
-
-/* 아랫 열 스타일 */
-.lower-row {
-    display: flex;
-    justify-content: center; /* 아랫 열의 버튼들을 중앙 정렬 */
-    gap: 100px; /* 버튼 간의 간격 설정 */
-}
-
-/* 버튼 공통 스타일 */
-.symptom {
-    margin-top: 50px;
+.recycle-container{
+    width: 50%;
     text-align: center;
+}
+.recycle{
     background-color: white;
-    padding: 20px;
     border: 1px solid #827f7f;
-    border-width: 2px;
     border-radius: 30px;
-    width: 180px;
-    font-size: 16px;
-    font-weight: bold;
+    width: 200px;
+    height: 200px;
+    font-size: 18px;
+    margin: 15px;
     cursor: pointer;
     transition: background-color 0.3s ease, border 0.3s ease;
-    gap: 80px;
 }
 
-/* 버튼 hover 시 스타일 */
-.symptom:hover {
+.recycle:hover {
     background-color: #7ac97d;
     color: white;
     border: 2px solid #6ebb70;
 }
 
-/* 약 정보 박스 스타일 */
-.medicine-box {
-    display: none;
-    position: fixed; 
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -50%);
+.recycle-box{
+    display:none;
+    position: fixed; /* 화면에 고정시키기 위해 */
+    top: 50%; /* 화면의 중간 위치 */
+    left: 50%; /* 화면의 중간 위치 */
+    transform: translate(-50%, -50%); /* 중앙 정렬 */
     border: 1px solid #ccc;
     padding: 20px;
     width: 100%;
@@ -107,8 +107,7 @@ body {
     border-radius: 5px;
     background-color: white;
 }
-
-.medicine-box .close {
+.recycle-box .close{
     display: block;
     text-align: right;
     font-size: 20px;
