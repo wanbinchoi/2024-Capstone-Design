@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,10 +22,8 @@
         </nav>
     </header>
     <section>
-        <!-- 게시글 추가 버튼 -->
         <div class="post-list">
             <a href="post.html" class="add-btn">새 게시물 추가</a>
-                <!-- 게시판 테이블 -->
             <table id="board">
                 <thead>
                     <tr>
@@ -46,30 +44,42 @@
     </footer>
 
     <script>
-        // 게시글 추가 버튼 클릭 이벤트
-        document.querySelector('.add-btn').addEventListener('click', function() {
+        // 페이지 로드 시 게시물 목록 불러오기
+        window.onload = function() {
+            const posts = JSON.parse(localStorage.getItem('posts')) || [];
             const boardBody = document.getElementById('board-body');
 
-            // 새로운 게시물 데이터 생성
-            const newRow = document.createElement('tr');
-            const newPostNumber = boardBody.rows.length + 1;  // 새로운 번호
+            // 게시물 목록을 테이블에 추가
+            posts.forEach((post, index) => {
+                const newRow = document.createElement('tr');
+                const titleCell = document.createElement('td');
+                const authorCell = document.createElement('td');
+                const dateCell = document.createElement('td');
 
-            // 새 게시물의 각 열을 추가
-            newRow.innerHTML = `
-                <td>${newPostNumber}</td>
-                <td><a href="#">새 게시글</a></td>
-                <td>새 작성자</td>
-                <td>${new Date().toISOString().split('T')[0]}</td>
-            `;
+                // 제목 클릭 시 내용 보여주기
+                const titleLink = document.createElement('a');
+                titleLink.textContent = post.title;  // innerHTML 대신 textContent 사용
+                titleLink.href = "#";
+                titleLink.setAttribute('data-index', index);
+                
+                titleLink.addEventListener('click', function(event) {
+                    event.preventDefault(); // 링크 기본 동작 방지
+                    const postIndex = this.getAttribute('data-index');
+                    const post = posts[postIndex];
+                    alert(`제목: ${post.title}\n내용: ${post.content}`);
+                });
 
-            // 새로운 게시글을 첫 번째에 삽입
-            boardBody.insertBefore(newRow, boardBody.firstChild);
+                titleCell.appendChild(titleLink);
+                newRow.appendChild(titleCell);
+                authorCell.textContent = post.author; // innerHTML 대신 textContent 사용
+                dateCell.textContent = post.date; // innerHTML 대신 textContent 사용
 
-            // 번호 재정렬 (모든 게시물의 번호를 갱신)
-            Array.from(boardBody.rows).forEach((row, index) => {
-                row.cells[0].innerText = index + 1;
+                newRow.appendChild(authorCell);
+                newRow.appendChild(dateCell);
+                boardBody.appendChild(newRow);
             });
-        });
+        };
+
     </script>
 </body>
 </html>

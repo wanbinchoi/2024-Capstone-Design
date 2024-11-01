@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>게시판</title>
+    <title>게시물 작성</title>
     <link rel="stylesheet" href="post.css">
-
 </head>
 <body>
     <header class="heading">
-        <a href="medicine.html" class="head-container">
-            <h1>의약품</h1>
+        <a href="bulletin.html" class="head-container">
+            <h1>게시물 작성</h1>
         </a>
         <nav class="navbar">
             <a href="home.html">Home</a>
@@ -26,7 +25,7 @@
         <div class="form-container">
             <input type="text" id="title" placeholder="제목" />
             <textarea id="content" placeholder="내용" rows="4"></textarea>
-            <button onclick="addPost()">글 작성</button>
+            <button id="addPostBtn">글 작성</button>
         </div>
         <ul class="post-list" id="postList"></ul>
     </div>
