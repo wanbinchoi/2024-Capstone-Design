@@ -1,41 +1,34 @@
-document.getElementById('addPostBtn').addEventListener('click', function() {
-    const titleInput = document.getElementById('title').value.trim();
-    const contentInput = document.getElementById('content').value.trim();
-    
-    // 빈 값 검증
-    if (!titleInput || !contentInput) {
-        alert("제목과 내용을 모두 입력해야 합니다.");
-        return; // 빈 값이 있을 경우 함수를 종료
+document.getElementById("submitPost").addEventListener("click", () => {
+    const title = document.getElementById("title").value.trim();
+    const content = document.getElementById("content").value.trim();
+    const writer = "작성자"; // 로그인 시스템 연동 시 변경
+    const date = new Date().toLocaleDateString();
+
+    if (!title || !content) {
+        alert("제목과 내용을 입력하세요!");
+        return;
     }
 
-    const posts = JSON.parse(localStorage.getItem('posts')) || [];
-    const newPost = {
-        title: titleInput,
-        content: contentInput,
-        author: '작성자', // 예시로 고정된 작성자
-        date: new Date().toISOString().split('T')[0]
-    };
+    // 기존 게시물 데이터 가져오기
+    const posts = JSON.parse(localStorage.getItem("posts")) || [];
 
-    // 새 게시물 추가
-    posts.push(newPost);
-    localStorage.setItem('posts', JSON.stringify(posts));
+    // 새로운 게시물 ID 설정
+    //post에 게시물번호만 추가하여 그 중 가장 큰 값을 찾음 게시물이 1개라도 있으면 그 게시물 번호 + 1 아니면 작성한 게시물이 1
+    const newId = posts.length > 0 ? Math.max(...posts.map(post => post.id)) + 1 : 1;
 
-    // 게시물 목록에 추가
-    addPostToList(newPost);
+    // 새로운 게시물 추가
+    posts.push({
+        id: newId,
+        title,
+        content,
+        writer,
+        date,
+    });
 
-    // 입력 필드 초기화
-    document.getElementById('title').value = '';
-    document.getElementById('content').value = '';
+    // 로컬 스토리지 저장
+    localStorage.setItem("posts", JSON.stringify(posts));
+    alert("게시물이 추가되었습니다.");
 
-    // 게시물 추가 후 bulletin.html로 이동
-    window.location.href = 'bulletin.html'; // 게시물 추가 후 게시판으로 이동
+    // 게시판 페이지로 이동
+    window.location.href = "bulletin.html";
 });
-
-// 게시물을 목록에 추가하는 함수
-function addPostToList(post) {
-    const postList = document.getElementById('postList');
-    const listItem = document.createElement('li');
-    listItem.textContent = `${post.title} - ${post.author} (${post.date})`;
-    listItem.onclick = () => alert(post.content); // 클릭 시 내용 보여주기
-    postList.appendChild(listItem);
-}

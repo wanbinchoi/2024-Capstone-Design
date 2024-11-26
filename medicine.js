@@ -44,7 +44,6 @@ const medicines = {
     },
 };
 
-// 증상 클릭 시 약 리스트를 보여주는 함수
 function showMedicineList(symptom) {
     const medicineBox = document.getElementById("medicine-box");
     const medicineList = document.getElementById("medicine-list");
@@ -53,27 +52,35 @@ function showMedicineList(symptom) {
     // 기존 리스트 초기화
     medicineList.textContent = '';
 
-    // 약 리스트 생성
-    if(symptom === '편의점'){
+    if (symptom === '편의점') {
+        // "편의점"의 약 리스트
         medicines[symptom].items.forEach(medicine => {
             const li = document.createElement('li');
-            li.textContent = `${medicine.name}, 증상: ${medicine.symptom}, 주의사항: ${medicine.caution}`;
+
+            // 각 항목에 <br> 태그 추가
+            li.innerHTML = `
+                ${medicine.name}<br>
+                증상: ${medicine.symptom}<br>
+                <span style="color: red;">주의사항: ${medicine.caution}</span><br><br>
+            `;
             medicineList.appendChild(li);
         });
-    }else{
+    } else {
+        // 다른 증상에 대한 약 리스트
         medicines[symptom].items.forEach(medicine => {
             const li = document.createElement('li');
-            li.textContent = medicine;
+            li.textContent = medicine; // <br> 태그 없이 단순 텍스트
             medicineList.appendChild(li);
         });
     }
 
-    
+    // "주의사항" 표시
     cautionsText.textContent = medicines[symptom].caution;
 
     // 약 상자 표시
     medicineBox.style.display = 'block';
 }
+
 
 // 상자 닫기 버튼 이벤트 리스너
 document.getElementById("close").addEventListener("click", function() {

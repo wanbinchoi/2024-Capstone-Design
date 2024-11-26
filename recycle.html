@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>의약품</title>
+    <title>재활용</title>
     <link rel="stylesheet" href="recycle.css">
 </head>
 <body>
@@ -16,40 +16,47 @@
             <a href="recycle.html">재활용</a>
             <a href="medicine.html">의약품</a>
             <a href="household.html">자취용품</a>
-            <a href="furniture.html">가구</a>
+            <a href="clean.html">청소방법</a>
             <a href="recipes.html">레시피</a>
             <a href="bulletin.html">게시판</a>
         </nav>
     </header>
     <section>
-        <div class="search-bar">
-            <input type="text" placeholder="재활용 검색">
-            <button>검색</button>    
-        </div>
-
         <div class="recycle-list">
-            <div class="recycle-container">
-                <button type="button" class="recycle" onclick="showRecycleList('종이류')"><h2>종이류</h2></button>
-                <button type="button" class="recycle" onclick="showRecycleList('플라스틱류')"><h2>플라스틱류</h2></button>
-                <button type="button" class="recycle" onclick="showMedicineList('유리류')"><h2>유리류</h2></button>
-            </div>
-            <div class="recycle-container">
-                <button type="button" class="recycle" onclick="showRecycleList('금속류')"><h2>금속류</h2></button>
-                <button type="button" class="recycle" onclick="showRecycleList('기타류')"><h2>기타류</h2></button>
-            </div>
+            <a onclick="showRecycleList('종이류')" class="recycle">
+                <img src="https://us.123rf.com/450wm/yummybuum/yummybuum2207/yummybuum220700177/189473660-messy-documents-pile-unorganized-paper-sheets-and-file-binders.jpg?ver=6" alt="종이류">
+                <p>종이류</p>
+            </a>
+            <a onclick="showRecycleList('플라스틱류')" class="recycle">
+                <img src="https://img.freepik.com/free-vector/bright-plastic-waste-flat-illustrations-collection_74855-16764.jpg" alt="플라스틱류">
+                <p>플라스틱류</p>
+            </a>
+            <a onclick="showRecycleList('유리류')" class="recycle">
+                <img src="https://thumb.ac-illust.com/dd/dde3df14cb7a5b05bd97cb7f5c3d261f_t.jpeg" alt="유리류">
+                <p>유리류</p>
+            </a>
         </div>
-        
+        <div class="recycle-list">
+            <a onclick="showRecycleList('금속류')" class="recycle">
+                <img src="https://thumb.ac-illust.com/fe/feb43382fc705b2532ba269e6efb6238_t.jpeg" alt="금속류">
+                <p>금속류</p>
+            </a>
+            <a onclick="showRecycleList('기타류')" class="recycle">
+                <img src="https://us.123rf.com/450wm/czaroot/czaroot1506/czaroot150600007/41801631-%EC%9E%AC%ED%99%9C%EC%9A%A9-%EB%B6%84%EB%A6%AC-%EC%88%98%EA%B1%B0-%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88%EC%9D%98-%EB%B2%A1%ED%84%B0-%EC%9D%BC%EB%9F%AC%EC%8A%A4%ED%8A%B8-%EB%A0%88%EC%9D%B4-%EC%85%98.jpg" alt="기타류">
+                <p>기타류</p>
+            </a>
+        </div>
         
         <div id="recycle-box" class="recycle-box">
             <h3>분리수거 종류</h3>
             <ul id="recycle-list"></ul>
             <span id="close" class="close">&times;</span>
         </div>
-    
-        <footer>
-            <p>(자)취하다</p>
-            <a href="login.html" class="login-btn">로그인</a>
-        </footer>
-        <script src="recyclescript.js"></script>
+    </section>
+    <section class="bottom">
+        <p>(자)취하다</p>
+        <a href="login.html" class="login-btn">로그인</a>
+    </section>
+    <script src="recyclescript.js"></script>
 </body>
 </html>

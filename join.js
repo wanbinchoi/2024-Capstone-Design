@@ -30,6 +30,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
             return;
         }
         showAlert("회원가입이 완료되었습니다.");
+
+        setTimeout(() => {
+            window.location.href = 'login.html';
+        }, 1000)
     });
 
     document.getElementById("close").addEventListener("click", function() {

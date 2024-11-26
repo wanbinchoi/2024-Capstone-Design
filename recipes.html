@@ -1,14 +1,15 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>자취레시피</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="recipes.css">
 </head>
 <body>
     <header class="heading">
-        <a href="medicine.html" class="head-container">
+        <a href="recipes.html" class="head-container">
             <h1>레시피</h1>
         </a>
         <nav class="navbar">
@@ -16,17 +17,81 @@
             <a href="recycle.html">재활용</a>
             <a href="medicine.html">의약품</a>
             <a href="household.html">자취용품</a>
-            <a href="furniture.html">가구</a>
+            <a href="clean.html">청소방법</a>
             <a href="recipes.html">레시피</a>
             <a href="bulletin.html">게시판</a>
         </nav>
     </header>
     <section>
+        <div class="recipes-list">
+            <a onclick="showRecipesList('김치볶음밥')" class="recipes">
+                <img src="https://img.freepik.com/premium-vector/bokkeumbap-kimchi-fried-rice-illustration-logo_499212-1460.jpg" alt="김치볶음밥">
+                <p>김치볶음밥</p>
+            </a>
+            <a onclick="showRecipesList('참치마요덮밥')" class="recipes">
+                <img src="https://thumb.ac-illust.com/5b/5b5e819ddf9ca68d287bd4d0ea416071_t.jpeg" alt="참치마요 덮밥">
+                <p>참치마요 덮밥</p>
+            </a>
+            <a onclick="showRecipesList('떡볶이')" class="recipes">
+                <img src="https://media.istockphoto.com/id/1367240177/ko/%EB%B2%A1%ED%84%B0/%EB%B0%A5-%EC%BC%80%EC%9D%B4%ED%81%AC-tteokbokki-%EA%B7%B8%EB%A6%87%EC%97%90-%EB%A7%A4%EC%9A%B4-%EC%86%8C%EC%8A%A4%EC%99%80-%ED%95%A8%EA%BB%98-%EC%8A%A4%EC%BC%80%EC%B9%98-%EB%B2%A1%ED%84%B0-%EA%B7%B8%EB%A6%BC.jpg?s=612x612&w=0&k=20&c=SDUefd5IaxCus_4R4sgATX6FHp96aqVbKnTowtbF0As=" alt="떡볶이">
+                <p>떡볶이</p>
+            </a>
+            <a onclick="showRecipesList('감자계란전')" class="recipes">
+                <img src="https://img1.daumcdn.net/thumb/R1280x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/guest/image/2TB-8gATcdqLi7mcTbCzU_rvxWQ.JPG" alt="감자계란전">
+                <p>감자계란전</p>
+            </a>
+        </div>
+        <div class="recipes-list">
+            <a onclick="showRecipesList('간단카레라이스')" class="recipes">
+                <img src="https://www.shutterstock.com/image-vector/western-food-curry-rice-with-600nw-2408070283.jpg" alt="카레라이스">
+                <p>카레라이스</p>
+            </a>
+            <a onclick="showRecipesList('토스트샌드위치')" class="recipes">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSg4EyZBOey74C7ma78pOXyBSvUctLZqs5ACw&s" alt="샌드위치">
+                <p>샌드위치</p>
+            </a>
+            <a onclick="showRecipesList('계란밥')" class="recipes">
+                <img src="https://thumb.ac-illust.com/97/97f3a068cbb31629f0a8e50e69ea789b_t.jpeg" alt="계란밥">
+                <p>계란밥</p>
+            </a>
+            <a onclick="showRecipesList('간단된장찌개')" class="recipes">
+                <img src="https://mblogthumb-phinf.pstatic.net/MjAyMDA1MjJfMjUy/MDAxNTkwMTIzOTA2ODg5.sB-rERJ67gMTL2e9_H7oh7uejSchvqiRKGzP7fL9REwg.BJ9yVQVK5XJ3gZzQcg4dA9zSCgmiEAifpLD0UHN1z1Ug.JPEG.feltboy/26.jpg?type=w800" alt="간단된장찌개">
+                <p>된장찌개</p>
+            </a>
+        </div>
+        <div class="recipes-list">
+            <a onclick="showRecipesList('양배추쌈')" class="recipes">
+                <img src="https://thumb.ac-illust.com/1a/1a923df76ac3952ed2d4f2aae2871e4a_t.jpeg" alt="양배추쌈">
+                <p>양배추쌈</p>
+            </a>
+            <a onclick="showRecipesList('오이참치비빔밥')" class="recipes">
+                <img src="https://www.urbanbrush.net/web/wp-content/uploads/edd/2023/06/urban-20230612103745455389.jpg" alt="오이참치비빔밥">
+                <p>오참비</p>
+            </a>
+            <a onclick="showRecipesList('들기름막국수')" class="recipes">
+                <img src="https://thumb.ac-illust.com/77/77f9d0baa484612dcc96e300e0b13772_t.jpeg" alt="들기름막국수">
+                <p>들기름막국수</p>
+            </a>
+            <a onclick="showRecipesList('토마토파스타')" class="recipes">
+                <img src="https://media.istockphoto.com/id/1449026659/ko/%EB%B2%A1%ED%84%B0/%EC%8B%A0%EC%84%A0%ED%95%98%EA%B3%A0-%EB%94%B0%EB%9C%BB%ED%95%9C-%EC%86%90%EC%9C%BC%EB%A1%9C-%EB%A7%8C%EB%93%A0-%EC%8A%A4%ED%8C%8C%EA%B2%8C%ED%8B%B0%EC%9D%98-%EB%B2%A1%ED%84%B0.jpg?s=612x612&w=0&k=20&c=3py844cUNTKOUFizA58WbFeTYsX_u-PLKpeFkcUuMfE=" alt="간단파스타">
+                <p>파스타</p>
+            </a>
+        </div>
 
+        <div id="recipe-box"  class="recipe-box" style="display: none;">
+            <h3>레시피 정보</h3>
+            <h4>재료</h4>
+            <ul id="recipe-list"></ul>
+            <h4>만드는 방법</h4>
+            <ul id="recipe-method" class="recipe-method"></ul>
+            <span id="close" class="close">&times;</span>
+        </div>
     </section>
-    <footer>
+    
+    <section class="bottom">
         <p>(자)취하다</p>
         <a href="login.html" class="login-btn">로그인</a>
-    </footer>
+    </section>
+    <script src="recipes.js"></script>
 </body>
 </html>

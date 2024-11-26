@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>자취용품</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="household.css">
 </head>
 <body>
     <header class="heading">
-        <a href="medicine.html" class="head-container">
+        <a href="household.html" class="head-container">
             <h1>자취용품</h1>
         </a>
         <nav class="navbar">
@@ -16,17 +16,49 @@
             <a href="recycle.html">재활용</a>
             <a href="medicine.html">의약품</a>
             <a href="household.html">자취용품</a>
-            <a href="furniture.html">가구</a>
+            <a href="clean.html">청소방법</a>
             <a href="recipes.html">레시피</a>
             <a href="bulletin.html">게시판</a>
         </nav>
     </header>
     <section>
-        
+        <div class="household-list">
+            <a onclick="showHouseholdList('생활 필수 용품')" class="household">
+                <img src="https://media.istockphoto.com/id/455416897/ko/%EB%B2%A1%ED%84%B0/care-%ED%8C%A8%ED%82%A4%EC%A7%80-%EC%9D%B4%EB%A9%94%EC%9D%BC%ED%95%A8-%EC%A0%84%EC%B2%B4-%EB%AC%BC%ED%92%88.jpg?s=612x612&w=0&k=20&c=2PEoOjR7Dz-9sZV2Ld89qHRyq7z-TBVqqosxABkTEBg=" alt="생활 필수 용품">
+                <p>생활 필수 용품</p>
+            </a>
+            <a onclick="showHouseholdList('주방 용품')" class="household">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7gG2duzOIHbQblXL0zfWS6XJuySj5qEp8_A&s" alt="주방 용품">
+                <p>주방 용품</p>
+            </a>
+            <a onclick="showHouseholdList('자취 용품')" class="household">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJd1Cro_b5S8e9bdDGHzCkFB7FUFTqs9_dhA&s" alt="자취 용품">
+                <p>자취 용품</p>
+            </a>
+        </div>
+        <div class="household-list">
+            <a onclick="showHouseholdList('편의 용품')" class="household">
+                <img src="https://png.pngtree.com/png-vector/20240621/ourmid/pngtree-health-and-beauty-products-for-men-and-women-in-flat-style-png-image_7041885.png" alt="편의 용품">
+                <p>편의 용품</p>
+            </a>
+            <a onclick="showHouseholdList('인테리어 용품')" class="household">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDybkYYN0ub83xILvDRwznEfkdtZ1XWNbi1g&s" alt="인테리어 용품">
+                <p>인테리어 용품</p>
+            </a>
+        </div>
+
+        <div id="household-box" class="household-box">
+            <h3></h3>
+            <ul id="household-list"></ul>
+            <span id="close" class="close">&times;</span>
+        </div>
     </section>
-    <footer>
+    <section class="bottom">
         <p>(자)취하다</p>
         <a href="login.html" class="login-btn">로그인</a>
-    </footer>
+    </section>
+    <script src="household.js">
+
+    </script>
 </body>
 </html>

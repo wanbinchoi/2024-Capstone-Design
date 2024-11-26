@@ -1,3 +1,4 @@
+
 /* cdn import */
 @import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap');
 
@@ -17,12 +18,13 @@ body {
     padding: 2px;
     background-color: #4CAF50;
     text-align: center;
-    color: white;
     font-weight: bold;
     font-family: 'Dongle', sans-serif;
     position: relative; /* relative로 설정하여 자식 요소를 조정 가능하게 */
 }
-
+.heading h1{
+    color: #333;
+}
 .navbar {
     display: flex;
     justify-content: center;
@@ -48,7 +50,7 @@ body {
     background-color: #ddd;
     border-radius: 5px;
 }
-footer{
+.bottom{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -65,4 +67,15 @@ footer{
     text-decoration: none;
     color: white;
     padding: 0 20px;
+}
+.container {
+    width: 80%;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+}
+h1 {
+    text-align: center;
 }

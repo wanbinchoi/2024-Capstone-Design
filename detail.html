@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>게시판</title>
-    <link rel="stylesheet" href="bullstyle.css">
-    <script src="bulltein.js" defer></script>
+    <title>게시물 상세</title>
+    <link rel="stylesheet" href="detail.css">
 </head>
 <body>
     <header class="heading">
@@ -23,28 +22,20 @@
         </nav>
     </header>
     <section>
-        <div class="post-list">
-            <a href="post.html" class="add-btn">새 게시물 추가</a>
-            <table id="board">
-                <thead>
-                    <tr>
-                        <th>번호</th>
-                        <th>제목</th>
-                        <th>작성자</th>
-                        <th>날짜</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody id="postList">
-                    <!-- JavaScript로 게시물 데이터를 추가합니다. -->
-                </tbody>
-            </table>
+        <div class="container">
+            <h2 id="postTitle">제목</h2>
+            <hr>
+            <p>작성자: <span id="postWriter"></span></p>
+            <hr>
+            <p>작성일: <span id="postDate"></span></p>
+            <hr>
+            <p id="postContent">내용</p>
         </div>
-    </section>    
+    </section>
     <section class="bottom">
         <p>(자)취하다</p>
         <a href="login.html" class="login-btn">로그인</a>
     </section>
-    <script src="bulletin.js"></script>
+    <script src="detail.js" defer></script>
 </body>
 </html>
